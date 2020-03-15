@@ -1,0 +1,13 @@
+// import base 
+@import './helper/variable';
+@import './base/reset';
+
+
+//import component 
+@import './component/component';
+
+//import layout
+@import "./layout/header.scss";
+@import "./layout/carousel.scss";
+@import "./layout/booking.scss";
+@import "./layout/movie.scss";

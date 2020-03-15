@@ -1,0 +1,56 @@
+.layout{
+  .header{
+      background-color: $color-white-1;
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+      position: fixed;
+      z-index: 1;
+
+      .menu{
+        line-height: 64px;
+        border-bottom: none;
+      }
+
+      // menu item: mac dinh
+      .ant-menu-item.menu__item{
+        a{
+          color: $color-black-1;
+        }
+        border-bottom: none;
+      }
+
+      // menu item: da duoc chon
+      .ant-menu-horizontal{
+        color: $color-black-1;
+        .ant-menu-item-selected{
+          a{
+            color: $color-black-1;
+          }
+        }
+      }
+
+      // menu item: hover
+      .ant-menu-item.menu__item.ant-menu-item-active{
+        a{
+          color: $color-orange-1;
+        }
+        border-bottom: none;
+      }
+
+      // menu item select
+      .ant-menu-item.menu__item.ant-menu-item-selected{
+        color: $color-orange-1;
+        a{
+          color: $color-orange-1;
+        }
+        border-bottom: none;
+      }
+
+      .logo{
+        img{
+          width: 150px;
+        }
+      }
+  }
+}

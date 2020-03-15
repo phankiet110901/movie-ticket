@@ -1,0 +1,30 @@
+.ant-carousel .slick-slide {
+  text-align: center;
+  height: 600px;
+  position: relative;
+  margin-top: 60px;
+
+  .carousel__slide{
+    height: 600px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+  }
+
+  .carousel__slide__1{
+    background-image: url('./../../img/carousel1.jpg');
+  }
+
+  .carousel__slide__2{
+    background-image: url('./../../img/carousel2.jpg');
+  }
+
+  .carousel__slide__3{
+    background-image: url('./../../img/carousel3.jpg');
+  }
+
+  .carousel__slide__4{
+    background-image: url('./../../img/carousel4.png');
+  }
+
+}

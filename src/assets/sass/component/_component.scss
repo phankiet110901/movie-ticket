@@ -1,0 +1,19 @@
+.text__title{
+    text-align: center;
+    color: $color-orange-1;
+    font-size: $fs-3;
+    padding: $pd-3;
+    display: inline-block;
+}
+
+
+.ant-card.movie__item.ant-card-bordered.ant-card-hoverable{
+    .ant-card-meta-title{
+        transition: all .5s;
+    }
+    &:hover{
+        .ant-card-meta-title{
+            color: $color-orange-1;
+        }
+    }
+}

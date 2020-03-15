@@ -1,26 +1,29 @@
 import React, { Component } from 'react';
+import {NavLink} from 'react-router-dom';
 import 'antd/dist/antd.css';
 import { Layout, Menu } from 'antd';
+import './../assets/sass/main.scss';
 
-const { Header} = Layout;
+
+const { Header } = Layout;
 
 export default class header extends Component {
     render() {
         return (
             <Layout className="layout">
-                <Header>
-                    <div className="logo" />
+                <Header className="header">
+                    <div className="logo">
+                        <img src = {require('./../assets/img/logo.png')} />
+                    </div>
                     <Menu
-                        theme="dark"
+                        theme="light"
                         mode="horizontal"
-                        defaultSelectedKeys={['2']}
-                        style={{ lineHeight: '64px', textAlign: 'center' }}
+                        defaultSelectedKeys={['1']}
+                        className="menu"
                     >
-                        <Menu.Item key="1">Lịch Chiếu</Menu.Item>
-                        <Menu.Item key="2">Cụm rạp</Menu.Item>
-                        <Menu.Item key="3">Tin tức</Menu.Item>
-                        <Menu.Item key="4">Ứng dụng</Menu.Item>
-
+                        <Menu.Item key="1" className="menu__item"><NavLink to="/home">Lịch chiếu</NavLink></Menu.Item>
+                        <Menu.Item key="2" className="menu__item"><NavLink to="/cumrap">Cụm rạp</NavLink></Menu.Item>
+                        <Menu.Item key="3" className="menu__item"><NavLink to="/tintuc">Tin tức</NavLink></Menu.Item>
                     </Menu>
                 </Header>
             </Layout>
