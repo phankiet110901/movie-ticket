@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Carousel from '../components/carousel';
 import Booking from '../components/booking';
 import MovieList from '../components/movieList';
+import CinemaList from './../components/cinemaList';
 
 export default class Home extends Component {
     render() {
@@ -10,6 +11,7 @@ export default class Home extends Component {
                 <Carousel/>
                 <Booking/>
                 <MovieList/>
+                <CinemaList />
             </div>
         )
     }

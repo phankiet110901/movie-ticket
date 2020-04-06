@@ -1,0 +1,37 @@
+.cinema__list{
+    margin-bottom: $mr-1;
+    .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
+        border-color: $color-black-1;
+        -webkit-box-shadow: -1px 0 0 0 $color-black-1;
+        &::before{
+            background-color: $color-black-1 !important;
+        }
+
+        &:hover{
+            box-shadow: -1px 0 0 0 $color-black-1;
+        }
+    }
+
+    .ant-radio-button-wrapper{
+        &:hover{
+            border-color: $color-black-1;
+        }
+    }
+
+    .ant-tabs-nav{
+        .ant-tabs-tab-active{
+            color: $color-orange-1;
+        }
+
+        .ant-tabs-tab{
+            &:hover{
+                color: $color-orange-1;
+            }
+        }
+
+        .ant-tabs-ink-bar.ant-tabs-ink-bar-animated{
+            background-color: $color-orange-1;
+        }
+    } 
+
+}
