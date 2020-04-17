@@ -1,5 +1,4 @@
 .cinema__list{
-    margin-bottom: $mr-1;
     .ant-radio-button-wrapper-checked:not(.ant-radio-button-wrapper-disabled){
         border-color: $color-black-1;
         -webkit-box-shadow: -1px 0 0 0 $color-black-1;
@@ -33,5 +32,27 @@
             background-color: $color-orange-1;
         }
     } 
+
+    .ant-tabs{
+        overflow: visible;
+    }
+
+    .cinema__detail{
+        padding: $pd-4;
+        display: flex;
+        cursor: pointer;
+        .cinema__info{
+            padding-left: $pd-4;
+            .cinema__name{
+                font-size: $fs-2;
+                color: $color-black-1;
+                font-weight: bold;
+            }
+            .cinema__address{
+                font-size: $fs-2;
+                color: $color-grey-1;
+            }
+        }
+    }
 
 }

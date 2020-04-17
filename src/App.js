@@ -15,7 +15,6 @@ function App() {
           <HomeTemplate exact path = "/cumrap" Component = {CumRap}></HomeTemplate>
           <HomeTemplate exact path = "/tintuc" Component = {TinTuc}></HomeTemplate>
           <HomeTemplate exact path = "/home" Component = {Home} />} } />
-          
         </Switch>
       </BrowserRouter>
      
