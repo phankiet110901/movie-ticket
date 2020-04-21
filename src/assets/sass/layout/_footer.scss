@@ -1,0 +1,14 @@
+.footer{
+    background-color: $color-black-2;
+    margin-top: $pd-1;
+    padding: $pd-3 0;
+    .footer__title{
+        text-transform: uppercase;
+        color: $color-white-1;
+        font-size: $fs-5;
+    }
+    .footer__info{
+        color: $color-grey-2;
+        font-size: $fs-5;
+    }
+}

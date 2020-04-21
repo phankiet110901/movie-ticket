@@ -62,7 +62,7 @@ export default class componentName extends Component {
         let cumRapHeThongRap = this.state.danhSachCumHeThongRap.find(cumRap => cumRap.maHeThongRap === maHeThongRap);
         return cumRapHeThongRap.cumRap.map((cumRap, index) => {
             return (
-                <div className="col-6 col-md-4" key={index}>
+                <div className="col-12 col-md-4" key={index}>
                     <CinemaDetail cumRap={cumRap} logo={logo} key={index}></CinemaDetail>
                 </div>
 
@@ -91,7 +91,7 @@ export default class componentName extends Component {
                         <Radio.Button value="top">Hiển thị ngang</Radio.Button>
                         <Radio.Button value="left">Hiển thị dọc</Radio.Button>
                     </Radio.Group>
-                    <Tabs defaultActiveKey="1" tabPosition={mode} style={{ height: 220 }}>
+                    <Tabs defaultActiveKey="1" tabPosition={mode}>
                         {elmHeThongRap}
                     </Tabs>
                 </div>

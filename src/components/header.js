@@ -13,7 +13,7 @@ export default class header extends Component {
             <Layout className="layout">
                 <Header className="header">
                     <div className="logo">
-                        <img src = {require('./../assets/img/logo.png')} />
+                        <NavLink to="/home"><img src = {require('./../assets/img/logo.png')} /></NavLink>
                     </div>
                     <Menu
                         theme="light"

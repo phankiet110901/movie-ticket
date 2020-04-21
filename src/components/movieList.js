@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieItem from "./movieItem";
 import './../assets/sass/main.scss';
+import {NavLink} from 'react-router-dom';
 import movieService from '../service/MovieServices';
 
 export default class movieList extends Component {
@@ -15,7 +16,7 @@ export default class movieList extends Component {
     // goi api lay thong tin tu database
     componentDidMount() {
         //goi api
-        movieService.layDanhSachPhim().then((res) => { this.setState({ DanhSachPhim: res.data }) }).catch((err) => { console.log(err) })
+        movieService.LayDanhSachPhim().then((res) => { this.setState({ DanhSachPhim: res.data }) }).catch((err) => { console.log(err) })
     }
 
 
@@ -24,7 +25,7 @@ export default class movieList extends Component {
         let elm = this.state.DanhSachPhim.map((phim, index) => {
             return (
                 <div className="col-12 col-md-3" key = {index}>
-                    <MovieItem thongTinPhim = {phim} />
+                    <NavLink to={`/detail-movie/${phim.maPhim}`}><MovieItem thongTinPhim = {phim} /></NavLink>
                 </div>
             );
         });

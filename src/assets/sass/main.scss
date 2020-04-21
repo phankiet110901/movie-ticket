@@ -7,8 +7,12 @@
 @import './component/component';
 
 //import layout
-@import "./layout/header.scss";
-@import "./layout/carousel.scss";
-@import "./layout/booking.scss";
-@import "./layout/movie.scss";
-@import "./layout/cinema.scss";
+@import "./layout/header";
+@import "./layout/carousel";
+@import "./layout/booking";
+@import "./layout/movie";
+@import "./layout/cinema";
+@import "./layout/footer";
+
+// detail movie
+@import "./layout/detailMovie";
