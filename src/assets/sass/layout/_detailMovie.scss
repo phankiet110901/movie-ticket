@@ -1,3 +1,13 @@
 .movieWapper{
-    padding: $pd-1 0;
+    padding: $pd-1 0 ;
+    .text__info{
+        padding: $pd-1 0;
+        .text__name{
+            font-size: $fs-3;
+            text-transform: uppercase;
+        }
+        .text__date{
+            font-size: $fs-5;
+        }
+    }
 }
