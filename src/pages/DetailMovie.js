@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MovieService from './../service/MovieServices';
-import CinemaService from './../service/CinemaServices';
+import DetailTabForDetailMoivePage from './../components/detailTabForDetailMoviePage';
 import 'antd/dist/antd.css';
 import { Tabs } from 'antd';
 
@@ -29,29 +29,44 @@ export default class DetailMovie extends Component {
     }
 
     RenderLichChieu = (lichChieu) => {
-
         if (lichChieu === undefined) {
-            return;
+            return "";
         }
 
-        let res = [];
+        console.log(lichChieu);
+
         let { tenHeThongRap } = lichChieu[0].thongTinRap;
-        res = lichChieu.map((elm, index) => {
-            if (elm.thongTinRap.tenHeThongRap === tenHeThongRap) {
-                return (<div key={index}>{tenHeThongRap}</div>);
-            } else {
-                tenHeThongRap = elm.thongTinRap.tenHeThongRap;
-                return (<div key={index}>{tenHeThongRap}</div>);
+        let listCinema = new Set();   // danh sach cac he thong rap co lich chieu phim tuong ung
+        listCinema.add(tenHeThongRap);
+        lichChieu.forEach(detaiLichChieu => {
+            if (tenHeThongRap !== detaiLichChieu.thongTinRap.tenHeThongRap) {
+                listCinema.add(detaiLichChieu.thongTinRap.tenHeThongRap);
+                tenHeThongRap = detaiLichChieu.thongTinRap.tenHeThongRap
             }
         });
-        return res;
+
+        listCinema = [...listCinema];
+        let contentTabs = listCinema.map((cinemaName, index) => {
+            return (
+                <TabPane tab={cinemaName} key={index}>
+                    <DetailTabForDetailMoivePage lichChieu = {lichChieu} tabName = {cinemaName} />
+                </TabPane>
+            );
+        });
+
+        return (
+            <Tabs defaultActiveKey="0">
+                {contentTabs}
+            </Tabs>
+        );
     }
+
 
     render() {
         let { lichChieu, maPhim, tenPhim, biDanh, trailer, hinhAnh, moTa, ngayKhoiChieu } = this.state.detailMovie;
         let ngayChieu = new Date(ngayKhoiChieu);
         let ngayKhoiChieuPhim = `${ngayChieu.getDate()}.${ngayChieu.getMonth() + 1}.${ngayChieu.getFullYear()}`;
-        console.log(lichChieu);
+
         return (
             <div className="container">
                 <div className="movieWapper">
@@ -71,7 +86,7 @@ export default class DetailMovie extends Component {
 
                 </div>
                 <div className="movieInfo__wapper">
-                    <div className="text-center"><h3 className="text__title">Thông tin chi tiết</h3></div>
+                    <div className="text-center"><h3 className="text__title">Trailer</h3></div>
                     <div className="movie__detail container">
                         <iframe width="100%" height={440} src={trailer} frameBorder={0} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
                     </div>
@@ -79,23 +94,7 @@ export default class DetailMovie extends Component {
                 <div className="booking__wapper container">
                     <div className="text-center"><h3 className="text__title">Đặt vé</h3></div>
                     <div className="card-container">
-                        <Tabs type="card">
-                            <TabPane tab="Tab Title 1" key="1">
-                                <p>Content of Tab Pane 1</p>
-                                <p>Content of Tab Pane 1</p>
-                                <p>Content of Tab Pane 1</p>
-                            </TabPane>
-                            <TabPane tab="Tab Title 2" key="2">
-                                <p>Content of Tab Pane 2</p>
-                                <p>Content of Tab Pane 2</p>
-                                <p>Content of Tab Pane 2</p>
-                            </TabPane>
-                            <TabPane tab="Tab Title 3" key="3">
-                                <p>Content of Tab Pane 3</p>
-                                <p>Content of Tab Pane 3</p>
-                                <p>Content of Tab Pane 3</p>
-                            </TabPane>
-                        </Tabs>
+                        {this.RenderLichChieu(lichChieu)}
                     </div>
                 </div>
             </div>
