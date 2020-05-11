@@ -17,3 +17,16 @@
         }
     }
 }
+
+// tabs for list cinema in page detail movie
+.ant-tabs-nav .ant-tabs-tab-active{
+    color: $color-orange-1;
+}
+
+.ant-tabs-nav .ant-tabs-tab:hover{
+    color: $color-orange-1;
+}
+
+.ant-tabs-ink-bar{
+    background-color: $color-orange-1;
+}
