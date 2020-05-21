@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import MovieService from './../service/MovieServices';
-import DetailTabForDetailMoivePage from './../components/detailTabForDetailMoviePage';
+import DetailTabForDetailMoviePage from '../components/detailTabForDetailMoviePage';
 import 'antd/dist/antd.css';
 import { Tabs } from 'antd';
 
@@ -49,7 +49,7 @@ export default class DetailMovie extends Component {
         let contentTabs = listCinema.map((cinemaName, index) => {
             return (
                 <TabPane tab={cinemaName} key={index}>
-                    <DetailTabForDetailMoivePage lichChieu = {lichChieu} tabName = {cinemaName} />
+                    <DetailTabForDetailMoviePage lichChieu = {lichChieu} tabName = {cinemaName} />
                 </TabPane>
             );
         });
@@ -63,7 +63,7 @@ export default class DetailMovie extends Component {
 
 
     render() {
-        let { lichChieu, maPhim, tenPhim, biDanh, trailer, hinhAnh, moTa, ngayKhoiChieu } = this.state.detailMovie;
+        let { lichChieu, tenPhim, trailer, hinhAnh, moTa, ngayKhoiChieu } = this.state.detailMovie;
         let ngayChieu = new Date(ngayKhoiChieu);
         let ngayKhoiChieuPhim = `${ngayChieu.getDate()}.${ngayChieu.getMonth() + 1}.${ngayChieu.getFullYear()}`;
 

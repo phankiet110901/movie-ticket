@@ -2,7 +2,16 @@ import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './../assets/sass/main.scss';
 
-export default class DetailTabsForDetailMoivePage extends Component {
+export default class DetailTabForDetailMoviePage extends Component {
+
+    ShowLink = () => {
+        if(sessionStorage.getItem('user') == null ){
+            return "/login";
+        }else{
+            return "/";
+        }
+    }
+
     render() {
         let { tabName, lichChieu } = this.props;
         let res = [];
@@ -11,7 +20,7 @@ export default class DetailTabsForDetailMoivePage extends Component {
                 let thoiGianChieu = new Date(detailLichChieu.ngayChieuGioChieu);
                 res.push(
                     <div key={index} className="detailTab">
-                        <NavLink to="/home" >
+                        <NavLink to={this.ShowLink()} >
                             <p className="detail__name">{detailLichChieu.thongTinRap.tenRap}</p>
                             <span className="detail__duration">{detailLichChieu.thoiLuong} phút - </span>
                             <span className="detail__day">{`${thoiGianChieu.getDate()}.${thoiGianChieu.getMonth() + 1}.${thoiGianChieu.getFullYear()}`}</span>

@@ -1,55 +1,34 @@
 .layout{
   .header{
       background-color: $color-white-1;
-      display: flex;
-      justify-content: space-between;
       width: 100%;
       position: fixed;
       z-index: 100000;
-
-      .menu{
-        line-height: 64px;
-        border-bottom: none;
+      #header__content{
+        justify-content: flex-end;
       }
-
-      // menu item: mac dinh
-      .ant-menu-item.menu__item{
-        a{
-          color: $color-black-1;
-        }
-        border-bottom: none;
-      }
-
-      // menu item: da duoc chon
-      .ant-menu-horizontal{
-        color: $color-black-1;
-        .ant-menu-item-selected{
-          a{
-            color: $color-black-1;
-          }
+      .buttonBar__icon{
+        i{
+          font-size: $fs-3 + 5;
+          color: $color-grey-1;
         }
       }
-
-      // menu item: hover
-      .ant-menu-item.menu__item.ant-menu-item-active{
-        a{
-          color: $color-orange-1;
-        }
-        border-bottom: none;
-      }
-
-      // menu item select
-      .ant-menu-item.menu__item.ant-menu-item-selected{
-        color: $color-orange-1;
-        a{
-          color: $color-orange-1;
-        }
-        border-bottom: none;
-      }
-
       .logo{
         img{
           width: 150px;
+        }
+      }
+
+      .button__login{
+        .login__img{
+          height: 30px;
+          width: 30px;
+          border-radius: 50%;
+          margin-right: $pd-4;
+        }
+        .login__link{
+          color: $color-grey-1;
+          font-size: $fs-1;
         }
       }
   }

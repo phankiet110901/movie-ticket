@@ -1,10 +1,9 @@
 import React from 'react';
-import {BrowserRouter, Switch} from 'react-router-dom';
+import { BrowserRouter, Switch, Route } from 'react-router-dom';
 import Home from './pages/Home';
-import CumRap from './pages/CumRap';
-import TinTuc from './pages/TinTuc';
 import DetailMovie from './pages/DetailMovie';
-import {HomeTemplate} from './templates/HomeTempate';
+import { HomeTemplate } from './templates/HomeTempate';
+import Login from './pages/Login';
 
 function App() {
   return (
@@ -12,14 +11,13 @@ function App() {
       <BrowserRouter>
         <Switch>
           {/* truyen props de redux */}
-          <HomeTemplate exact path = "/" Component = {Home} />} } />
-          <HomeTemplate exact path = "/cumrap" Component = {CumRap}></HomeTemplate>
-          <HomeTemplate exact path = "/tintuc" Component = {TinTuc}></HomeTemplate>
-          <HomeTemplate exact path = "/home" Component = {Home} />} } />
-          <HomeTemplate exact path = "/detail-movie/:id" Component = {DetailMovie} />
+          <HomeTemplate exact path="/" Component={Home} />} } />
+          <HomeTemplate exact path="/home" Component={Home} />} } />
+          <HomeTemplate exact path="/detail-movie/:id" Component={DetailMovie} />
+          <Route exact path="/login" render = {(props) => { return <Login {...props} /> }} />
         </Switch>
       </BrowserRouter>
-     
+
     </div>
   );
 }

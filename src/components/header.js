@@ -1,32 +1,29 @@
 import React, { Component } from 'react';
-import {NavLink} from 'react-router-dom';
-import 'antd/dist/antd.css';
-import { Layout, Menu } from 'antd';
-import './../assets/sass/main.scss';
-
-
-const { Header } = Layout;
+import { NavLink } from 'react-router-dom';
+import 'font-awesome/css/font-awesome.min.css';
 
 export default class header extends Component {
     render() {
         return (
-            <Layout className="layout">
-                <Header className="header">
-                    <div className="logo">
-                        <NavLink to="/home"><img src = {require('./../assets/img/logo.png')} /></NavLink>
+            <div className="layout">
+                <nav className="navbar navbar-expand-lg header">
+                    {/* left: logo */}
+                    <div className="navbar-brand logo">
+                        <NavLink to="/home"><img src={require('./../assets/img/logo.png')} /></NavLink>
                     </div>
-                    <Menu
-                        theme="light"
-                        mode="horizontal"
-                        defaultSelectedKeys={['1']}
-                        className="menu"
-                    >
-                        <Menu.Item key="1" className="menu__item"><NavLink to="/home">Lịch chiếu</NavLink></Menu.Item>
-                        <Menu.Item key="2" className="menu__item"><NavLink to="/cumrap">Cụm rạp</NavLink></Menu.Item>
-                        <Menu.Item key="3" className="menu__item"><NavLink to="/tintuc">Tin tức</NavLink></Menu.Item>
-                    </Menu>
-                </Header>
-            </Layout>
+                    {/* button for responsive */}
+                    <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#header__content" >
+                        <span className="buttonBar__icon"><i className="fa fa-align-right" /></span>
+                    </button>
+                    {/* right: button for login */}
+                    <div className="collapse navbar-collapse" id="header__content">
+                        <div className="button__login">
+                            <img src={require('./../assets/img/avatar.png')} className="login__img" />
+                            <NavLink to="/login"><span className="login__link">Đăng nhập</span></NavLink>
+                        </div>
+                    </div>
+                </nav>
+            </div>
         )
     }
 }

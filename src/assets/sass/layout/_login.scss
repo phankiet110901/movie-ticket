@@ -1,0 +1,83 @@
+.login__wapper{
+       position: fixed;
+       height: 100%;
+       width: 100%;
+       background-image: url('./../../img/backapp.jpg');
+       background-size: cover;
+       background-position: center;
+       background-repeat: no-repeat;
+       display: flex;
+       justify-content: space-around;
+       align-items: center;
+
+       .login__form{
+           background: $color-blue-1;
+           width: 300px;
+           height: 500px;
+           position: relative;
+           .login__close{
+               font-size: $fs-3;
+               background-color: $color-blue-2;
+               color: $color-blue-3;
+               border-radius: 50%;
+               height: 40px;
+               width: 40px;
+               text-align: center;
+               cursor: pointer;
+               position: absolute;
+               right: -15px;
+               top: -15px;
+           }
+
+           .form__detail{
+               .form__logo{
+                   img{
+                      width:100%;
+                      display: block;
+                   }
+                   width: 180px;
+                   margin: $mr-1 auto;
+               }
+               .form__slogan{
+                    color: $color-white-1;
+                    font-size: $fs-2;
+                    text-align: center;
+               }
+               .form__input{
+                   display: flex;
+                   justify-content: space-around;
+                   align-items: center;
+                   padding: 50px;
+                   label{
+                       color: $color-white-1;
+                       font-size: $fs-2;
+                       margin: $mr-2 0;
+                   }
+                   input{
+                       border: 1px solid $color-grey-1;
+                       border-radius: 5px;
+                       padding:  $pd-6 $pd-5;
+                       display: inline-block;
+                       width: 100%;
+                       &:focus{
+                            border-radius: 5px;
+                            padding: $pd-6 $pd-5;
+                       }
+                   }
+                   button{
+                       margin-top: $mr-1;
+                       border: 1px solid $color-orange-1;
+                       background-color: $color-orange-1;
+                       color: $color-white-1;
+                       padding: $pd-5;
+                       border-radius: 5px;
+                       &:hover{
+                            border: 1px solid $color-orange-2;
+                            background-color: $color-orange-2;
+                            border-radius: 5px;
+                        }
+                   }
+               }
+           }
+       }
+    }
