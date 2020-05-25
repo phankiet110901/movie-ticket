@@ -20,7 +20,7 @@ export default class cinemaDetail extends Component {
         return (
             <div>
                 <div className="cinema__detail">
-                    <img src={this.state.logo} height="50px" width="50px" />
+                    <img src={this.state.logo} height="50px" width="50px" alt="logo cinema"/>
                     <div className="cinema__info">
                         <p className="cinema__name">{this.state.tenCumRap}</p>
                         <span className="cinema__address">{this.state.diaChi}</span>

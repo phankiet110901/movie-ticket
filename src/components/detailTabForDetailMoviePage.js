@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import { NavLink } from 'react-router-dom';
 import './../assets/sass/main.scss';
+import { Config } from "./../common/setting/Config";
 
 export default class DetailTabForDetailMoviePage extends Component {
 
     ShowLink = () => {
-        if(sessionStorage.getItem('user') == null ){
+        if(sessionStorage.getItem(Config.userLogin) == null ){
             return "/login";
         }else{
             return "/";

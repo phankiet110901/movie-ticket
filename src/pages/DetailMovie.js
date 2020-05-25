@@ -88,7 +88,7 @@ export default class DetailMovie extends Component {
                 <div className="movieInfo__wapper">
                     <div className="text-center"><h3 className="text__title">Trailer</h3></div>
                     <div className="movie__detail container">
-                        <iframe width="100%" height={440} src={trailer} frameBorder={0} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen />
+                        <iframe width="100%" height={440} src={trailer} frameBorder={0} allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowFullScreen title="trailer"/>
                     </div>
                 </div>
                 <div className="booking__wapper container">
