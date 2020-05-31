@@ -33,8 +33,6 @@ export default class DetailMovie extends Component {
             return "";
         }
 
-        console.log(lichChieu);
-
         let { tenHeThongRap } = lichChieu[0].thongTinRap;
         let listCinema = new Set();   // danh sach cac he thong rap co lich chieu phim tuong ung
         listCinema.add(tenHeThongRap);

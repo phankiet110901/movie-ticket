@@ -14,7 +14,7 @@ class Login extends Component {
             password: "",
             login: {},
             err: "",
-            redirectToReferrer: false
+            isRedirect: false
         }
     }
 
@@ -34,7 +34,7 @@ class Login extends Component {
                 .then((res) => {
                     this.setState({
                         login: res.data,
-                        redirectToReferrer: true
+                        isRedirect: true
                     });
                     sessionStorage.setItem(Config.userLogin, this.state.login.accessToken);
                     sessionStorage.setItem(Config.userName, this.state.login.taiKhoan);
@@ -51,7 +51,7 @@ class Login extends Component {
 
 
     render() {
-        if (this.state.redirectToReferrer || sessionStorage.getItem("userLogin") != null) {
+        if (this.state.isRedirect || sessionStorage.getItem("userLogin") != null) {
             return <Redirect to="/home" />
         }
         return (

@@ -1,0 +1,43 @@
+.container{
+    padding-top: $pd-1;
+    .booking__left{
+        .booking__screen{
+            min-height: 10px;
+            width: 100%;
+            background-color: $color-black-1;
+        }
+        .booking__chairs{
+            text-align: center;
+            margin-top: $mr-1;
+            .chair__icon{
+                margin: $pd-6;
+                &::before{
+                    font-size: $fs-3 + 10;
+                }
+            }
+
+            .booking__note{
+                margin-top: $mr-1;
+            }
+
+            span{
+                margin-right: $mr-1;
+            }
+
+            .normal__chair{
+                color: $color-black-1;
+            }
+
+            .vip__chair{
+                color: $color-yellow-1;
+            }
+
+            .selected__chair{
+                color: $color-grey-1;
+            }
+        }
+    }
+    .booking__right{
+        background-color: blue;
+    }
+}

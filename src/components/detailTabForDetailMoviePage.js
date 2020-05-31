@@ -5,11 +5,11 @@ import { Config } from "./../common/setting/Config";
 
 export default class DetailTabForDetailMoviePage extends Component {
 
-    ShowLink = () => {
+    ShowLink = (maLichChieu) => {
         if(sessionStorage.getItem(Config.userLogin) == null ){
             return "/login";
         }else{
-            return "/";
+            return `/booking-movie/${maLichChieu}`;
         }
     }
 
@@ -21,7 +21,7 @@ export default class DetailTabForDetailMoviePage extends Component {
                 let thoiGianChieu = new Date(detailLichChieu.ngayChieuGioChieu);
                 res.push(
                     <div key={index} className="detailTab">
-                        <NavLink to={this.ShowLink()} >
+                        <NavLink to={this.ShowLink(detailLichChieu.maLichChieu)} >
                             <p className="detail__name">{detailLichChieu.thongTinRap.tenRap}</p>
                             <span className="detail__duration">{detailLichChieu.thoiLuong} phút - </span>
                             <span className="detail__day">{`${thoiGianChieu.getDate()}.${thoiGianChieu.getMonth() + 1}.${thoiGianChieu.getFullYear()}`}</span>
