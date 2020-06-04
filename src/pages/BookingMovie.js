@@ -4,6 +4,7 @@ import "./../assets/sass/main.scss";
 import { Config } from "./../common/setting/Config";
 import 'font-awesome/css/font-awesome.min.css';
 import BookingServices from "./../service/BookingServices";
+import DetailChair from "./../components/detailChair";
 
 export default class BookingMovie extends Component {
 
@@ -18,28 +19,7 @@ export default class BookingMovie extends Component {
         let { danhSachGhe } = this.state.thongTinPhongVe;
         if (danhSachGhe !== undefined) {
             return danhSachGhe.map((chiTietGhe, index) => {
-                if ((index + 1) % 9 === 0) {
-                    if (chiTietGhe.daDat) {
-                        return <Fragment key={index}><i className="fa fa-square chair__icon selected__chair" /><br /></Fragment>
-                    } else if (chiTietGhe.daDat === false && chiTietGhe.loaiGhe === "Thuong") {
-                        return <Fragment key={index}><i className="fa fa-square chair__icon normal__chair" /><br /></Fragment>
-                    } else if (chiTietGhe.daDat === false && chiTietGhe.loaiGhe === "Vip") {
-                        return <Fragment key={index}><i className="fa fa-square chair__icon vip__chair" /><br /></Fragment>
-                    } else {
-                        return "";
-                    }
-
-                } else {
-                    if (chiTietGhe.daDat) {
-                        return <Fragment key={index}><i className="fa fa-square chair__icon selected__chair" /></Fragment>
-                    } else if (chiTietGhe.daDat === false && chiTietGhe.loaiGhe === "Thuong") {
-                        return <Fragment key={index}><i className="fa fa-square chair__icon normal__chair" /></Fragment>
-                    } else if (chiTietGhe.daDat === false && chiTietGhe.loaiGhe === "Vip") {
-                        return <Fragment key={index}><i className="fa fa-square chair__icon vip__chair" /></Fragment>
-                    } else {
-                        return "";
-                    }
-                }
+                return <DetailChair stateBooking={chiTietGhe.daDat} typeChair={chiTietGhe.loaiGhe} index={index} key={index} />
             })
         }
     }
@@ -74,9 +54,10 @@ export default class BookingMovie extends Component {
                                 {this.RenderDanhSachGhe()}
 
                                 <div className="booking__note">
-                                   <i className="fa fa-square chair__icon selected__chair" /><span>: Ghế  đã bi mua</span>
+                                    <i className="fa fa-square chair__icon selected__chair" /><span>: Ghế  đã bi mua</span>
                                     <i className="fa fa-square chair__icon vip__chair" /><span>: Ghế  vip</span>
                                     <i className="fa fa-square chair__icon normal__chair" /><span>: Ghế  thường</span>
+                                    <i className="fa fa-square chair__icon select__chair" /><span>: Ghế  bạn chọn</span>
                                 </div>
                             </div>
 
