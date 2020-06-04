@@ -11,6 +11,7 @@
             margin-top: $mr-1;
             .chair__icon{
                 margin: $pd-6;
+                cursor: pointer;
                 &::before{
                     font-size: $fs-3 + 10;
                 }
@@ -42,6 +43,47 @@
         }
     }
     .booking__right{
-        background-color: blue;
+        .totalPrice{
+            text-align: center;
+            color: $color-green-1;
+            span{
+                color: $color-green-1;
+                font-size: $fs-6;
+            }
+            border-bottom: 1px dashed $color-grey-1;
+            padding-bottom: $pd-2;
+        }
+        .infoMovie{
+            padding: $pd-2 0;
+            border-bottom: 1px dashed $color-grey-1;
+            .cinemaName{
+                font-size: $fs-2;
+                color: $color-grey-1;
+            }
+            .movieName{
+                color: $color-orange-1;
+            }
+            .time{
+                color: $color-green-1;
+            }
+        }
+        .showChair{
+            padding: $pd-2 0;
+            .showChair__title{
+                color: $color-orange-1;
+            }
+        }
+        .payment{
+            width: 100%;
+            background-color: $color-orange-1;
+            color: $color-white-1;
+            text-align: center;
+            padding: $pd-5;
+            cursor: pointer;
+            transition: all .5s;
+            &:hover{
+                background-color: $color-orange-2;
+            }
+        }       
     }
 }
